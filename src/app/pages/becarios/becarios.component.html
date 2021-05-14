@@ -57,9 +57,9 @@
                     <input type="date" class="form-control" placeholder="Fecha alta" [value]="becario.fechaalta | date: 'yyyy-MM-dd'" />
                 </td>
                 <td class="text-nowrap text-center">
-                    <a (click)="guardarCambios(becario)" data-toggle="tooltip" data-original-title="Guardar cambios"> <i class="fas fa-save fa-2x text-inverse m-r-10 cursor"></i></a>
+                    <a (click)="guardarCambios(becario)" data-toggle="tooltip" data-original-title="Editar"> <i class="fas fa-edit fa-2x text-inverse m-r-10 cursor"></i></a>
                     &nbsp;
-                    <a (click)="eliminarBecario(becario)" data-toggle="tooltip" data-original-title="Borrar"> <i class="fas fa-times fa-2x text-danger cursor"></i> </a>
+                    <a (click)="deleteBecario(becario)" data-toggle="tooltip" data-original-title="Borrar"> <i class="fas fa-times fa-2x text-danger cursor"></i> </a>
                 </td>
             </tr>
         </tbody>

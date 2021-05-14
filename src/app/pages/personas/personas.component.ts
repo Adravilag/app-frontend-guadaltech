@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Persona } from 'src/app/models/persona.model';
 import { PersonasService } from 'src/app/services/personas.service';
 
 @Component({
@@ -9,14 +10,25 @@ import { PersonasService } from 'src/app/services/personas.service';
 })
 export class PersonasComponent implements OnInit {
 
-  public personas : any = [];
+  public personas : Persona[] = [];
 
   constructor(private personasService: PersonasService) { }
 
   ngOnInit(): void {
+    this.loadBecarios();
+  }
 
-    this.personasService.getPersonas().subscribe( resp => {console.log(resp); this.personas = resp});
+  loadBecarios() : void {
+    this.personasService.getPersonas().subscribe( resp => {
+      this.personas = resp;
+    });
+  }
 
+  deletePersona(persona: Persona) : void {
+    this.personasService.deletePersona(persona._id).subscribe( resp => {
+      console.log('Borrado');
+      this.loadBecarios();
+    });
   }
 
 }

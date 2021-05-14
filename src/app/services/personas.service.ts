@@ -20,4 +20,11 @@ export class PersonasService {
 
   }
 
+  deletePersona(id: string) {
+
+    const url = `${base_url}/personas/${id}`;    
+    return this.http.delete(url);
+
+  }
+
 }
