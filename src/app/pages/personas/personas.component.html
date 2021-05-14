@@ -1,74 +1,56 @@
-<div id="main-wrapper">
-    <app-navbar></app-navbar>
-    <div class="page-wrapper mt-2">
-        <div class="container-fluid">
-            <!-- Mi sistema de rutas -->
-            <div class="row">
-                <div class="col-12">
-                    <div class="card">
-                        <div class="card-body">
-
-                            <div class="row">
-                                <div class="col">
-                                    <h4 class="card-title">Listado de Personas</h4>
-                                    <h6 class="card-subtitle">Personas registradas en la aplicación</h6>
-                                </div>
-                                <div class="col">
-                                    <div class="text-end">
-                                        <button class="btn btn-primary">
+<div class="row">
+    <div class="col">
+        <h4 class="card-title">Listado de Personas</h4>
+        <h6 class="card-subtitle">Personas registradas en la aplicación</h6>
+    </div>
+    <div class="col">
+        <div class="text-end">
+            <button class="btn btn-primary">
                                             <i class="fa fa-user"></i>
                                             &nbsp;
                                             Crear Persona
                                         </button>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <hr>
-
-                            <div class="table-responsive animate__animated animate__fadeIn">
-                                <table class="table table-bordered">
-                                    <thead>
-                                        <tr>
-                                            <th>Foto</th>
-                                            <th>Nombre</th>
-                                            <th>Apellidos</th>
-                                            <th>Email</th>
-                                            <th>Rol</th>
-                                            <th class="text-nowrap w100">Acciones</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr *ngFor="let persona of personas">
-                                            <td>
-                                                <img class="avatar_thumbnail" src="../../../assets/img/test_avatar.jpg" alt="Gatito">
-                                            </td>
-                                            <td>
-                                                {{ persona.nombre }}
-                                            </td>
-                                            <td>
-                                                {{ persona.apellidos }}
-                                            </td>
-                                            <td>
-                                                {{ persona.email }}
-                                            </td>
-                                            <td>
-                                                {{ persona.role }}
-                                            </td>
-                                            <td class="text-nowrap text-center">
-                                                <a (click)="guardarCambios(becario)" data-toggle="tooltip" data-original-title="Guardar cambios"> <i class="fas fa-save fa-2x text-inverse m-r-10 cursor"></i></a>
-                                                &nbsp;
-                                                <a (click)="eliminarBecario(becario)" data-toggle="tooltip" data-original-title="Borrar"> <i class="fas fa-times fa-2x text-danger cursor"></i> </a>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <app-footer></app-footer>
         </div>
     </div>
+</div>
+
+<hr>
+
+<div class="table-responsive animate__animated animate__fadeIn">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Foto</th>
+                <th>Nombre</th>
+                <th>Apellidos</th>
+                <th>Email</th>
+                <th>Rol</th>
+                <th class="text-nowrap w100">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let persona of personas">
+                <td>
+                    <img class="avatar_thumbnail" src="../../../assets/img/test_avatar.jpg" alt="Gatito">
+                </td>
+                <td>
+                    {{ persona.nombre }}
+                </td>
+                <td>
+                    {{ persona.apellidos }}
+                </td>
+                <td>
+                    {{ persona.email }}
+                </td>
+                <td>
+                    {{ persona.role }}
+                </td>
+                <td class="text-nowrap text-center">
+                    <a (click)="guardarCambios(becario)" data-toggle="tooltip" data-original-title="Guardar cambios"> <i class="fas fa-save fa-2x text-inverse m-r-10 cursor"></i></a>
+                    &nbsp;
+                    <a (click)="eliminarBecario(becario)" data-toggle="tooltip" data-original-title="Borrar"> <i class="fas fa-times fa-2x text-danger cursor"></i> </a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

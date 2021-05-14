@@ -8,9 +8,9 @@ import { ComponentsModule } from './components/components.module';
 import { PagesModule } from './pages/pages.module';
 
 import { PagesComponent } from './pages/pages.component';
-import { NotPageFoundComponent } from './pages/not-page-found/not-page-found.component';
 import { RouterModule } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { NopagefoundComponent } from './pages/nopagefound/nopagefound.component';
 
 
 
@@ -18,7 +18,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
   declarations: [
     AppComponent,
     PagesComponent,
-    NotPageFoundComponent
+    NopagefoundComponent
   ],
   imports: [
     RouterModule,
