@@ -7,12 +7,79 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-body">
-                            <h1>Listado de Becarios</h1>
+
+                            <div class="row">
+                                <div class="col">
+                                    <h4 class="card-title">Listado de Becarios</h4>
+                                    <h6 class="card-subtitle">Becarios registrados en la aplicación</h6>
+                                </div>
+                                <div class="col">
+                                    <div class="text-end">
+                                        <button class="btn btn-primary">
+                                            <i class="fa fa-user"></i>
+                                            &nbsp;
+                                            Crear Becario
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <hr>
+
+                            <div class="table-responsive animate__animated animate__fadeIn">
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>Nombre</th>
+                                            <th>Apellidos</th>
+                                            <th>Puesto</th>
+                                            <th>Horario</th>
+                                            <th>FechaSalida</th>
+                                            <th class="text-nowrap w100">Acciones</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor="let becario of becarios">
+                                            <td>
+                                                <input type="text" class="form-control" placeholder="Nombre" [value]="becario.nombre" />
+                                            </td>
+                                            <td>
+                                                <input type="text" class="form-control" placeholder="Apellidos" [value]="becario.apellidos" />
+                                            </td>
+                                            <td>
+                                                <select class="form-control" (change)="cambiarRole(usuario)">
+                                                    <option value="Diseñador">Diseñador</option>
+                                                    <option value="Diseñadora">Diseñadora</option>
+                                                    <option value="Administrativa">Administrativa</option>
+                                                    <option value="Administrativo">Administrativo</option>
+                                                    <option value="Full-Stack Developer">Full-Stack Developer</option>
+                                                    <option value="FullStack Web Developer">FullStack Web Developer</option>
+                                                </select>
+                                            </td>
+                                            <td>
+                                                <select class="form-control" (change)="cambiarRole(usuario)">
+                                                    <option value="Jornada completa">Jornada completa</option>
+                                                    <option value="Tiempo parcial 1">Tiempo parcial 1</option>
+                                                    <option value="Tiempo parcial 2">Tiempo parcial 2</option>
+                                                </select>
+                                            </td>
+                                            <td>
+                                                <input type="date" class="form-control" placeholder="Fecha alta" [value]="becario.fechaalta | date: 'yyyy-MM-dd'" />
+                                            </td>
+                                            <td class="text-nowrap text-center">
+                                                <a (click)="guardarCambios(becario)" data-toggle="tooltip" data-original-title="Guardar cambios"> <i class="fas fa-save fa-2x text-inverse m-r-10 cursor"></i></a>
+                                                &nbsp;
+                                                <a (click)="eliminarBecario(becario)" data-toggle="tooltip" data-original-title="Borrar"> <i class="fas fa-times fa-2x text-danger cursor"></i> </a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <app-footer></app-footer>
         </div>
-        <app-footer></app-footer>
     </div>
-</div>

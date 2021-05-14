@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  base_url_personas: "http://localhost:3000/api",
+  base_url_becarios: "https://guadaltech-fullstack.herokuapp.com/api"
 };
 
 /*

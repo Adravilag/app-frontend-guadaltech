@@ -4,10 +4,11 @@ import { PersonasComponent } from './pages/personas/personas.component';
 import { BecariosComponent } from './pages/becarios/becarios.component';
 import { PagesComponent } from './pages/pages.component';
 import { NotPageFoundComponent } from './pages/not-page-found/not-page-found.component';
+import { HomeComponent } from './pages/home/home.component';
 
 
 const routes: Routes = [
-    { path: '', component: PagesComponent },
+    { path: '', component: HomeComponent },
     { path: 'personas', component: PersonasComponent, pathMatch: 'full' },
     { path: 'becarios', component: BecariosComponent, pathMatch: 'full' },
     { path: '**', component: NotPageFoundComponent, redirectTo:''},
