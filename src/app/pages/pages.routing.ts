@@ -4,8 +4,8 @@ import { HomeComponent } from './home/home.component';
 import { PersonasComponent } from './personas/personas.component';
 import { BecariosComponent } from './becarios/becarios.component';
 import { PagesComponent } from './pages.component';
-import { PerfilComponent } from './perfil/perfil.component';
 import { BecarioComponent } from './becarios/becario.component';
+import { PersonaComponent } from './personas/persona.component';
 
 
 const routes: Routes = [
@@ -13,9 +13,9 @@ const routes: Routes = [
         children: [
             { path: 'home', component: HomeComponent, pathMatch: 'full', data: { title: 'Home App' } },
             { path: 'personas', component: PersonasComponent, pathMatch: 'full', data: { title: 'Personas App' } },
+            { path: 'persona/:id', component: PersonaComponent, pathMatch: 'full', data: { title: 'Persona App' } },
             { path: 'becarios', component: BecariosComponent, pathMatch: 'full', data: { title: 'Becarios App' } },
             { path: 'becario/:id', component: BecarioComponent, pathMatch: 'full', data: { title: 'Becario Nuevo' } },
-            { path: 'perfil', component: PerfilComponent, pathMatch: 'full', data: { title: 'Perfil de usuario' } }
         ]
     }
 ];

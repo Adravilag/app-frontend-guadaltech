@@ -13,19 +13,17 @@
         <table class="table table-bordered">
             <thead>
                 <tr class="text-center">
-                    <th>Foto</th>
                     <th>Nombre</th>
                     <th>Apellidos</th>
                     <th>Email</th>
-                    <th>Rol</th>
+                    <th>Puesto</th>
+                    <th>Horario</th>
+                    <th>Salario</th>
                     <th class="text-nowrap w100">Acciones</th>
                 </tr>
             </thead>
             <tbody>
                 <tr *ngFor="let persona of personas" class="text-center">
-                    <td class="w75">
-                        <img class="avatar_thumbnail" src="../../../assets/img/test_avatar.jpg" alt="Gatito">
-                    </td>
                     <td>
                         <input type="text" class="form-control" placeholder="Nombre persona" [(ngModel)]="persona.nombre">
                     </td>
@@ -36,10 +34,29 @@
                         <input type="email" class="form-control" placeholder="Email persona" [(ngModel)]="persona.email">
                     </td>
                     <td>
-                        <select class="form-control" [(ngModel)]="persona.role">
-                          <option value="USER_ROLE">User</option>
-                          <option value="ADMIN_ROLE">Admin</option>
-                      </select>
+                        <select class="form-control " [(ngModel)]="persona.puesto">
+                            <option value=" ">Seleccione el puesto</option>
+                            <option value="Administrativa ">Administrativa</option>
+                            <option value="Administrativo ">Administrativo</option>
+                            <option value="Diseñador ">Diseñador</option>
+                            <option value="Diseñadora ">Diseñadora</option>
+                            <option value="Desarrollador ">Desarrollador</option>
+                            <option value="Desarrolladora ">Desarrolladora</option>
+                            <option value="Front-End Developer ">Front-End Developer</option>
+                            <option value="Back-End Developer ">Back-End Developer</option>
+                            <option value="Full-Stack Developer ">Full-Stack Developer</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select [disabled] class="form-control " [(ngModel)]="persona.horario">
+                            <option value=" ">Seleccione el horario</option>
+                            <option value="Jornada completa ">Jornada completa</option>
+                            <option value="Tiempo parcial 1 ">Tiempo parcial 1</option>
+                            <option value="Tiempo parcial 2 ">Tiempo parcial 2</option>
+                        </select>
+                    </td>
+                    <td>
+                        <input type="text" class="form-control" placeholder="Salario" [(ngModel)]="persona.salario">
                     </td>
                     <td class="text-nowrap text-center">
                         <a (click)="guardarCambios(persona)" data-toggle="tooltip" data-original-title="Guardar"> <i class="fas fa-save fa-2x text-inverse m-r-10 cursor"></i></a>
@@ -48,6 +65,9 @@
                     </td>
                 </tr>
             </tbody>
+
         </table>
     </div>
+    <button (click)="cambiarPagina(-10)" class="btn btn-primary">Anterior</button> &nbsp;
+    <button (click)="cambiarPagina(10) " class="btn btn-primary">Siguiente</button>
 </div>

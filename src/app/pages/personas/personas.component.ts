@@ -12,6 +12,8 @@ import Swal from 'sweetalert2';
 export class PersonasComponent implements OnInit {
 
   public personas : Persona[] = [];
+  public desde: number = 0;
+  public totalPersonas: number = 0;
 
   constructor(private personasService: PersonasService) { }
 
@@ -20,8 +22,9 @@ export class PersonasComponent implements OnInit {
   }
 
   loadPersonas() : void {
-    this.personasService.getPersonas().subscribe( resp => {
-      this.personas = resp;
+    this.personasService.getPersonas(this.desde).subscribe( resp => {
+      this.personas = resp.personas;
+      this.totalPersonas = resp.total;
     });
   }
 
@@ -52,5 +55,21 @@ export class PersonasComponent implements OnInit {
     });
 
   }
+
+  cambiarPagina(valor) {
+
+    this.desde += valor;
+    
+    if(this.desde < 0) {
+      this.desde = 0;
+    } else if(this.desde >= this.totalPersonas)
+    {
+      this.desde -= valor;
+    }
+    
+    this.loadPersonas();
+
+  }
+
 
 }

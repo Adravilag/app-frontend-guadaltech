@@ -42,7 +42,7 @@ export class BecarioComponent implements OnInit {
     });
 
     this.personasService.getPersonas().subscribe( resp => {
-      this.personas = resp;
+      this.personas = resp.personas;
     });
 
   }
@@ -57,7 +57,7 @@ export class BecarioComponent implements OnInit {
 
       this.becarioSeleccionado = becario;
       const { nombre, apellidos, puesto, horario, responsables } = becario;
-      
+
       this.becarioForm.setValue({nombre, apellidos, puesto, horario, responsables});
 
     }, () => this.router.navigateByUrl(`/panel/becarios`));

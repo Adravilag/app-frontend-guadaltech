@@ -10,10 +10,11 @@ import { ResponsablesPipe } from '../pipes/responsables.pipe';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BecarioComponent } from './becarios/becario.component';
+import { PersonaComponent } from './personas/persona.component';
 
 
 @NgModule({
-  declarations: [PersonasComponent, BecariosComponent, HomeComponent, ResponsablesPipe, BecarioComponent],
+  declarations: [PersonasComponent, BecariosComponent, HomeComponent, ResponsablesPipe, BecarioComponent, PersonaComponent],
   imports: [
     CommonModule,
     ComponentsModule,

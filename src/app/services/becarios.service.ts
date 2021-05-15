@@ -15,15 +15,19 @@ export class BecariosService {
 
   constructor(private http: HttpClient) { }
 
-  getBecarios() {
+  get totalBecarios() {
+    const url = `${base_url}/becarios/count`;
+    return this.http.get(url);
+  }
 
-    const url = `${base_url}/becarios`;
-  
+  getBecarios(desde: number = 0) {
+
+    const url = `${base_url}/becarios?filter={"skip":"${desde}", "limit":"10" }`;
     return this.http.get<Becario[]>(url).pipe(
       
       map( (resp : Becario[]) => resp.filter( r => r.id !== '' )),
       map( (resp : Becario[]) => {
-      
+
         const becarios : Becario[] = resp.map( becario => 
           
           new Becario(
@@ -35,7 +39,8 @@ export class BecariosService {
             becario.responsables, 
             becario.id)
         );
-  
+        console.log(resp);
+
         return becarios;
 
     }));
@@ -55,10 +60,7 @@ export class BecariosService {
   }
 
   updateBecario( becario: Becario) {
-    
-    
-    console.log(becario);
-    
+        
     const url = `${base_url}/becarios/${becario.id}`;
     console.log(url);
     return this.http.put(url, becario);

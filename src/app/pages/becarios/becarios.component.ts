@@ -15,6 +15,8 @@ export class BecariosComponent implements OnInit {
 
   public becarios : Becario[] = [];
   public personas : Persona[] = [];
+  public desde: number = 0;
+  public totalBecarios: number = 0;
 
   constructor(private becariosService: BecariosService, private personasService: PersonasService) { }
 
@@ -23,18 +25,17 @@ export class BecariosComponent implements OnInit {
     this.loadPersonas();
   }
 
-  loadBecarios() : void {
-    this.becariosService.getBecarios().subscribe( (resp : Becario[]) => {
+  loadBecarios() : void {    
+    this.becariosService.getBecarios(this.desde).subscribe( (resp) => {
       this.becarios = resp;
-      console.log(this.becarios);
     });
   }
 
   loadPersonas() : void {
-    this.personasService.getPersonas().subscribe( (resp : Persona[]) => {
-      this.personas = resp;
-      console.log(this.personas);
+    this.personasService.getPersonas().subscribe( (resp : {personas: Persona[]}) => {
+      this.personas = resp.personas;
     });
+    this.getBecariosTotales();
   }
 
   deleteBecario(becario: Becario) : void {
@@ -55,6 +56,27 @@ export class BecariosComponent implements OnInit {
       }
     });
 
+  }
+
+  cambiarPagina(valor) {
+
+    this.desde += valor;
+    
+    if(this.desde < 0) {
+      this.desde = 0;
+    } else if(this.desde >= this.totalBecarios)
+    {
+      this.desde -= valor;
+    }
+    
+    this.loadBecarios();
+
+  }
+
+  getBecariosTotales() {
+    this.becariosService.totalBecarios.subscribe( (resp : { count: number}) => {
+      this.totalBecarios = resp.count;
+    })
   }
 
 }
