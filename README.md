@@ -37,7 +37,7 @@ Como objetivo del desarrollo de la aplicación, será necesario garantizar los s
 * Crear un **API REST** con Node.js y para ello crear la entidad Personas, dichas personas trabajan para GuadalTech y tendrá los siguientes atributos: _nombre_ (string), _apellidos_(string), _email_  (string), _password_  (string), _role_ (string), _img_ (string); los campos como email, password y role tendrán sentido en el futuro si dentro del plazo se consigue lograr hacer los dos servicios en su debido tiempo, con la posibilidad de autentificar los usuarios y poder gestionar tanto los becarios como las personas registradas. Además, toda la información se almacenará a una base de datos no relacional (MongoDB)
 * Hacer una aplicación con Angular con la posibilidad de listar los becarios y personas.
 
-# Objetivos Secundarios
+## Objetivos Secundarios
 * CRUD completo tanto para Personas y Becarios
 * Buscar Personas y Becarios por buscador
 * Lograr que la aplicación de Angular sea lo más óptima posible, necesidad de no volver a reutilizar el mismo código
