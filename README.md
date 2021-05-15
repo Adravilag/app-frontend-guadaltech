@@ -31,8 +31,16 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ## Propuesta
 La SPA (o Aplicación de una Simple Página) tendrá un diseño para trabajar con dos servicios esenciales, dichos servicios estarán diseñados para los becarios y personas que trabajan en GuadalTech. He hecho elección de Node.js para trabajar en la parte backend y Angular para la parte frontend, ya que ambas tecnologías son los que más conocimientos tengo para realizar la propuesta de la aplicación.
 
-## Objetivos
+## Objetivos Principales
 Como objetivo del desarrollo de la aplicación, será necesario garantizar los siguientes puntos:
 * Hacer una página en la que muestre un listado de los becarios que trabajan en GuadalTech
 * Crear un **API REST** con Node.js y para ello crear la entidad Personas, dichas personas trabajan para GuadalTech y tendrá los siguientes atributos: _nombre_ (string), _apellidos_(string), _email_  (string), _password_  (string), _role_ (string), _img_ (string); los campos como email, password y role tendrán sentido en el futuro si dentro del plazo se consigue lograr hacer los dos servicios en su debido tiempo, con la posibilidad de autentificar los usuarios y poder gestionar tanto los becarios como las personas registradas. Además, toda la información se almacenará a una base de datos no relacional (MongoDB)
 * Hacer una aplicación con Angular con la posibilidad de listar los becarios y personas.
+
+# Objetivos Secundarios
+* CRUD completo tanto para Personas y Becarios
+* Buscar Personas y Becarios por buscador
+* Lograr que la aplicación de Angular sea lo más óptima posible, necesidad de no volver a reutilizar el mismo código
+* Sistema de Login/Registro
+* Sistema de Identificación por Token y acceso a páginas por roles
+* Pruebas unitarias y de integración
