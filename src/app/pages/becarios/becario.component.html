@@ -1,0 +1,83 @@
+<div class="container fa-border">
+
+    <div class="row mt-2">
+        <div class="col">
+            <h4 class="card-title">Nuevo Becario</h4>
+            <h6 class="card-subtitle">Creación del nuevo becario</h6>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="row p-2">
+        <div class="col-md">
+            <form [formGroup]="becarioForm" (ngSubmit)="guardarBecario()">
+                <div class="form-group row mb-2">
+                    <label class="col-sm-2 col-form-label">Nombre</label>
+                    <div class="col-sm-9">
+                        <div class="input-group">
+                            <input type="text" formControlName="nombre" class="form-control" placeholder="Nombre del becario">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row mb-2">
+                    <label class="col-sm-2 col-form-label">Apellidos</label>
+                    <div class="col-sm-9">
+                        <div class="input-group">
+                            <input type="text" formControlName="apellidos" class="form-control" placeholder="Apellidos del becario">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row mb-2">
+                    <label class="col-sm-2 col-form-label">Puesto</label>
+                    <div class="col-sm-9">
+                        <div class="input-group">
+                            <select class="form-control" formControlName="puesto">
+                                <option value="">Seleccione el puesto</option>
+                                <option value="Administrativa">Administrativa</option>
+                                <option value="Administrativo">Administrativo</option>
+                                <option value="Diseñador">Diseñador</option>
+                                <option value="Diseñadora">Diseñadora</option>
+                                <option value="Desarrollador">Desarrollador</option>
+                                <option value="Desarrolladora">Desarrolladora</option>
+                                <option value="Front-End Developer">Front-End Developer</option>
+                                <option value="Back-End Developer">Back-End Developer</option>
+                                <option value="Full-Stack Developer">Full-Stack Developer</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row mb-2">
+                    <label class="col-sm-2 col-form-label">Horario</label>
+                    <div class="col-sm-9">
+                        <div class="input-group">
+                            <select class="form-control" formControlName="horario">
+                                <option value="">Seleccione el horario</option>
+                                <option value="Jornada completa">Jornada completa</option>
+                                <option value="Tiempo parcial 1">Tiempo parcial 1</option>
+                                <option value="Tiempo parcial 2">Tiempo parcial 2</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row mb-2">
+                    <label class="col-sm-2 col-form-label">Responsables</label>
+                    <div class="col-sm-9">
+                        <div class="input-group">
+                            <select multiple class="form-control" formControlName="responsables">
+                        <option *ngFor="let persona of personas" [ngValue]="persona.uid"> {{persona.nombre}} {{persona.apellidos}}</option>
+                    </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-center">
+                    <div class="form-group row mt-2 col-sm-4">
+                        <button type="submit" [disabled]="becarioForm.invalid" class="btn btn-success waves-effect waves-light"><i class="fa fa-save"></i> Guardar
+                          cambios</button>
+
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

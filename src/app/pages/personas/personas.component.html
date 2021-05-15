@@ -1,56 +1,53 @@
-<div class="row">
-    <div class="col">
-        <h4 class="card-title">Listado de Personas</h4>
-        <h6 class="card-subtitle">Personas registradas en la aplicación</h6>
-    </div>
-    <div class="col">
-        <div class="text-end">
-            <button class="btn btn-primary">
-                                            <i class="fa fa-user"></i>
-                                            &nbsp;
-                                            Crear Persona
-                                        </button>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h4 class="card-title">Listado de Personas</h4>
+            <h6 class="card-subtitle">Personas registradas en la aplicación</h6>
         </div>
+
     </div>
-</div>
 
-<hr>
+    <hr>
 
-<div class="table-responsive animate__animated animate__fadeIn">
-    <table class="table table-bordered">
-        <thead>
-            <tr>
-                <th>Foto</th>
-                <th>Nombre</th>
-                <th>Apellidos</th>
-                <th>Email</th>
-                <th>Rol</th>
-                <th class="text-nowrap w100">Acciones</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let persona of personas">
-                <td>
-                    <img class="avatar_thumbnail" src="../../../assets/img/test_avatar.jpg" alt="Gatito">
-                </td>
-                <td>
-                    {{ persona.nombre }}
-                </td>
-                <td>
-                    {{ persona.apellidos }}
-                </td>
-                <td>
-                    {{ persona.email }}
-                </td>
-                <td>
-                    {{ persona.role }}
-                </td>
-                <td class="text-nowrap text-center">
-                    <a (click)="guardarCambios(persona)" data-toggle="tooltip" data-original-title="Editar"> <i class="fas fa-edit fa-2x text-inverse m-r-10 cursor"></i></a>
-                    &nbsp;
-                    <a (click)="deletePersona(persona)" data-toggle="tooltip" data-original-title="Borrar"> <i class="fas fa-times fa-2x text-danger cursor"></i> </a>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="table-responsive animate__animated animate__fadeIn">
+        <table class="table table-bordered">
+            <thead>
+                <tr class="text-center">
+                    <th>Foto</th>
+                    <th>Nombre</th>
+                    <th>Apellidos</th>
+                    <th>Email</th>
+                    <th>Rol</th>
+                    <th class="text-nowrap w100">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let persona of personas" class="text-center">
+                    <td class="w75">
+                        <img class="avatar_thumbnail" src="../../../assets/img/test_avatar.jpg" alt="Gatito">
+                    </td>
+                    <td>
+                        <input type="text" class="form-control" placeholder="Nombre persona" [(ngModel)]="persona.nombre">
+                    </td>
+                    <td>
+                        <input type="text" class="form-control" placeholder="Apellidos persona" [(ngModel)]="persona.apellidos">
+                    </td>
+                    <td>
+                        <input type="email" class="form-control" placeholder="Email persona" [(ngModel)]="persona.email">
+                    </td>
+                    <td>
+                        <select class="form-control" [(ngModel)]="persona.role">
+                          <option value="USER_ROLE">User</option>
+                          <option value="ADMIN_ROLE">Admin</option>
+                      </select>
+                    </td>
+                    <td class="text-nowrap text-center">
+                        <a (click)="guardarCambios(persona)" data-toggle="tooltip" data-original-title="Guardar"> <i class="fas fa-save fa-2x text-inverse m-r-10 cursor"></i></a>
+                        &nbsp;
+                        <a (click)="deletePersona(persona)" data-toggle="tooltip" data-original-title="Borrar"> <i class="fas fa-times fa-2x text-danger cursor"></i> </a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </div>

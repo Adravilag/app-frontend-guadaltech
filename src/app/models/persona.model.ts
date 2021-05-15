@@ -7,8 +7,7 @@ export class Persona {
         public password?: string,
         public img?: string,
         public role?: 'ADMIN_ROLE' | 'USER_ROLE',
-        public becarios?: [],
-        public _id?: string
+        public uid?: string
     ) {};
 
 }

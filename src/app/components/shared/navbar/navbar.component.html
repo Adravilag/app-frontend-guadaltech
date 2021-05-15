@@ -9,20 +9,31 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" routerLink="./home">Inicio</a>
+                    <a class="nav-link" routerLink="./home" routerLinkActive="active">Inicio</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" routerLink="./personas">Personas</a>
+                    <a class="nav-link" routerLink="./personas" routerLinkActive="active">Personas</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" routerLink="./becarios">Becarios</a>
+                    <a class="nav-link" routerLink="./becarios" routerLinkActive="active">Becarios</a>
                 </li>
             </ul>
-            <form class="d-flex">
-                <input class="form-control me-2" type="search" placeholder="Buscar persona..." aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Buscar</button>
-            </form>
+
             <div class="d-flex">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Bienvenido, Usuario@
+                    </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" routerLink="./perfil">Perfil</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" routerLink="./logout">Desconectar</a></li>
+                        </ul>
+                    </li>
+                </ul>
                 <img class="avatar_thumbnail" src="../../../../assets/img/test_avatar.jpg" alt="Gatito">
             </div>
         </div>

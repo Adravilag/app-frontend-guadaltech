@@ -6,14 +6,21 @@ import { PersonasComponent } from '../pages/personas/personas.component';
 import { BecariosComponent } from '../pages/becarios/becarios.component';
 import { ComponentsModule } from '../components/components.module';
 import { HomeComponent } from './home/home.component';
+import { ResponsablesPipe } from '../pipes/responsables.pipe';
+import { RouterModule } from '@angular/router';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BecarioComponent } from './becarios/becario.component';
 
 
 @NgModule({
-  declarations: [PersonasComponent, BecariosComponent, HomeComponent],
+  declarations: [PersonasComponent, BecariosComponent, HomeComponent, ResponsablesPipe, BecarioComponent],
   imports: [
     CommonModule,
     ComponentsModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class PagesModule { }

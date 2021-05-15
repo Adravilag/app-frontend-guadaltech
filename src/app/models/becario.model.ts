@@ -5,8 +5,8 @@ export class Becario {
         public apellidos: string,
         public puesto: string,
         public horario: string,
-        public fechasalida: string,
-        public responsables: [],
+        public fechaalta: string,
+        public responsables: string[],
         public id?: string,
     ) {};
 

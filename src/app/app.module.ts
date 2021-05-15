@@ -13,12 +13,11 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NopagefoundComponent } from './pages/nopagefound/nopagefound.component';
 
 
-
 @NgModule({
   declarations: [
     AppComponent,
     PagesComponent,
-    NopagefoundComponent
+    NopagefoundComponent,
   ],
   imports: [
     RouterModule,

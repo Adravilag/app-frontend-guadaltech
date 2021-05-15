@@ -1,14 +1,52 @@
 /* You can add global styles to this file, and also import other style files */
 
+body,
+.card-body {
+    background-color: rgb(243, 243, 243);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 15px;
+}
+
+nav {
+    box-shadow: -1px -1px 5px rgb(187, 185, 185);
+}
+
 .footer {
     padding: 15px;
-    border-top: 1px solid #eee;
-    background: rgb(248, 248, 248)
+    background: rgb(248, 248, 248);
+    box-shadow: -1px -1px 1px rgb(216, 216, 216);
 }
 
 .avatar_thumbnail {
-    width: 50px;
+    width: 45px;
     border-radius: 41px 41px 41px;
     margin-left: 10px;
     box-shadow: -1px -1px 3px black;
+}
+
+.avatar_thumbnail_becarios {
+    width: 25px;
+    border-radius: 41px 41px 41px;
+    margin-left: 10px;
+    box-shadow: -1px -1px 3px black;
+}
+
+.img-avatar {
+    width: 225px;
+    border-radius: 11px 11px 11px;
+    float: left;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.w75 {
+    width: 75px;
+}
+
+.w100 {
+    width: 100px;
+}
+
+.w250 {
+    width: 250px;
 }
