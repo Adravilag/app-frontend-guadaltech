@@ -39,9 +39,9 @@ Como objetivo del desarrollo de la aplicación, será necesario garantizar los s
 
 ## Objetivos Secundarios
 * CRUD completo tanto para Personas y Becarios
-* Buscar Personas y Becarios por buscador
+* ~Buscar Personas y Becarios por buscador~
 * Lograr que la aplicación de Angular sea lo más óptima posible, necesidad de no volver a reutilizar el mismo código
-* Sistema de Login/Registro
-* Sistema de Identificación por Token y acceso a páginas por roles
+* ~Sistema de Login/Registro~
+* ~Sistema de Identificación por Token y acceso a páginas por roles~
 * Paginación de los datos obtenidos de _Personas_ y _Becarios_ tanto en Node.JS como en Angular
 * Pruebas unitarias y de integración
