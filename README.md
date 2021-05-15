@@ -1,4 +1,4 @@
-# GuadaltechFrontend
+# Guadaltech Frontend
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.9.
 
@@ -25,3 +25,14 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+# Documentación
+
+## Propuesta
+La SPA (o Aplicación de una Simple Página) tendrá un diseño para trabajar con dos servicios esenciales, dichos servicios estarán diseñados para los becarios y personas que trabajan en GuadalTech. He hecho elección de Node.js para trabajar en la parte backend y Angular para la parte frontend, ya que ambas tecnologías son los que más conocimientos tengo para realizar la propuesta de la aplicación.
+
+## Objetivos
+Como objetivo del desarrollo de la aplicación, será necesario garantizar los siguientes puntos:
+* Hacer una página en la que muestre un listado de los becarios que trabajan en GuadalTech
+* Crear un API REST con la entidad Personas, dichas personas trabajan para GuadalTech y tendrá los siguientes atributos:
+** A
