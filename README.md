@@ -34,5 +34,4 @@ La SPA (o Aplicación de una Simple Página) tendrá un diseño para trabajar co
 ## Objetivos
 Como objetivo del desarrollo de la aplicación, será necesario garantizar los siguientes puntos:
 * Hacer una página en la que muestre un listado de los becarios que trabajan en GuadalTech
-* Crear un API REST con la entidad Personas, dichas personas trabajan para GuadalTech y tendrá los siguientes atributos:
-** A
+* Crear un **API REST** con la entidad Personas, dichas personas trabajan para GuadalTech y tendrá los siguientes atributos: _nombre_ (string), _apellidos_(string), _email_  (string), _password_  (string), _role_ (string), _img_ (string)
