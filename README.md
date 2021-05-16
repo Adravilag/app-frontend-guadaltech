@@ -9,15 +9,16 @@ Ejecuta `ng serve` para el servicio de desarrollo. Navega a `http://localhost:42
 # Documentación
 
 ## Propuesta
-La SPA (o Aplicación de una Simple Página) tendrá un diseño para trabajar con dos servicios esenciales, dichos servicios estarán diseñados para los becarios y personas que trabajan en GuadalTech. He hecho elección de Node.js para trabajar en la parte backend y Angular para la parte frontend, ya que ambas tecnologías son los que más conocimientos tengo para realizar la propuesta de la aplicación.
+La SPA (o Aplicación de una Simple Página) tendrá un diseño para trabajar con el servicio de becarios que trabajan en GuadalTech. He hecho elección de Node.js para trabajar en la parte backend con Express y Angular para la parte frontend, ya que ambas tecnologías son los que más conocimientos tengo para realizar la propuesta de la aplicación.
 
-## Requisitos del pryoecto
+## Requisitos del proyecto
 * Listar los datos de becarios, si dispongo de tiempo tendrá la posibilidad de editar y/o eliminar.
 * Crear la aplicación con un buen diseño con hojas de estilos (CSS) 
 
 ## Alcance
 Como alcance del desarrollo de la aplicación, será necesario garantizar los siguientes puntos:
-* Hacer una página en la que muestre un listado de los becarios que trabajan en GuadalTech
+* Hacer una página en la que muestre un listado de los becarios que trabajan en GuadalTech.
+* Hacer una página en la que muestre un listado de las personas (usuarios o empleados) que trabajan en GuadalTech.
 * Crear un **API REST** con Node.js a partir del framework Express y para ello crear la entidad Personas, dichas personas trabajan para GuadalTech y tendrá los siguientes atributos: _nombre_ (string), _apellidos_(string), _email_  (string), ~_password_  (string)~, ~_role_ (string)~, ~_img_ (string)~, horario (string), puesto (string) y salario (number); los campos como email, password y role tendrían sentido en el futuro si dentro del plazo se consigue lograr hacer los dos servicios en su debido tiempo, con la posibilidad de autentificar los usuarios y poder gestionar tanto los becarios como las personas registradas. Además, toda la información se almacenará a una base de datos no relacional (MongoDB)
 * Hacer una aplicación con Angular con la posibilidad de listar los becarios y personas.
 
