@@ -20,11 +20,11 @@ export class BecariosService {
     return this.http.get(url);
   }
 
-  getBecarios(desde: number = 0, limit: number = 0) {
+  getBecarios(desde: number = 0, limite: number = 0) {
     
 
-    const url = limit === 0 ? `${base_url}/becarios?filter={"skip":"${desde}"}` 
-      : `${base_url}/becarios?filter={"skip":"${desde}", "limit":"${limit}" }`
+    const url = limite === 0 ? `${base_url}/becarios?filter={"skip":"${desde}"}` 
+      : `${base_url}/becarios?filter={"skip":"${desde}", "limit":"${limite}" }`
       
     return this.http.get<Becario[]>(url).pipe(
       

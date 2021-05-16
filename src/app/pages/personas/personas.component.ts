@@ -18,6 +18,7 @@ export class PersonasComponent implements OnInit {
   public desde: number = 0;
   public totalPersonas: number = 0;
   public cargando: boolean = true;
+  public limite: number = 10;
 
   constructor(private personasService: PersonasService, private becarioService: BecariosService) { }
 
@@ -27,7 +28,7 @@ export class PersonasComponent implements OnInit {
 
   loadPersonas() : void {
     this.cargando = true;
-    this.personasService.getPersonas(this.desde).subscribe( resp => {
+    this.personasService.getPersonas(this.desde, this.limite).subscribe( resp => {
       this.cargando = false;
       this.personas = resp.personas;
       this.totalPersonas = resp.total;

@@ -2,8 +2,8 @@
 
     <div class="row mt-2">
         <div class="col">
-            <h4 class="card-title">Perfil Persona</h4>
-            <h6 class="card-subtitle">Vista preliminar del Persona</h6>
+            <h4 class="card-title">{{title}}</h4>
+            <h6 class="card-subtitle">{{subtitle}}</h6>
         </div>
     </div>
 
@@ -11,7 +11,7 @@
 
     <div class="row p-2 animate__animated animate__fadeIn">
         <div class="col-md">
-            <form [formGroup]="personaForm">
+            <form [formGroup]="personaForm" (ngSubmit)="guardarPersona()">
                 <div class="form-group row mb-2">
                     <label class="col-sm-2 col-form-label">Nombre</label>
                     <div class="col-sm-9 ">
@@ -41,13 +41,13 @@
                     <div class="col-sm-9 ">
                         <div class="input-group">
                             <select class="form-control" formControlName="puesto">
-                                <option value=" ">Seleccione el puesto</option>
+                                <option value="">Seleccione el puesto</option>
                                 <option value="Administrativ@">Administrativ@</option>
                                 <option value="Diseñador/a">Diseñador/a</option>
-                                <option value="Desarrollador/a ">Desarrollador/a</option>
-                                <option value="Front-End Developer ">Front-End Developer</option>
-                                <option value="Back-End Developer ">Back-End Developer</option>
-                                <option value="Full-Stack Developer ">Full-Stack Developer</option>
+                                <option value="Desarrollador/a">Desarrollador/a</option>
+                                <option value="Front-End Developer">Front-End Developer</option>
+                                <option value="Back-End Developer">Back-End Developer</option>
+                                <option value="Full-Stack Developer">Full-Stack Developer</option>
                             </select>
                         </div>
                     </div>
@@ -57,7 +57,7 @@
                     <div class="col-sm-9 ">
                         <div class="input-group ">
                             <select class="form-control" formControlName="horario">
-                                <option value=" ">Seleccione el horario</option>
+                                <option value="">Seleccione el horario</option>
                                 <option value="Jornada completa">Jornada completa</option>
                                 <option value="Tiempo parcial 1">Tiempo parcial 1</option>
                                 <option value="Tiempo parcial 2">Tiempo parcial 2</option>
@@ -69,14 +69,25 @@
                     <label class="col-sm-2 col-form-label ">Salario</label>
                     <div class="col-sm-9">
                         <div class="input-group">
-                            <input type="text" formControlName="salario" class="form-control" placeholder="Salario de Persona">
+                            <select class="form-control" formControlName="salario">
+                                <option value="">Seleccione el salario</option>
+                                <option value="13000">13000</option>
+                                <option value="15000">15000</option>
+                                <option value="18000">18000</option>
+                                <option value="20000">20000</option>
+                                <option value="22000">22000</option>
+                                <option value="23000">23000</option>
+                                <option value="25000">25000</option>
+                            </select>
                         </div>
                     </div>
                 </div>
 
                 <div class="d-flex justify-content-center">
                     <div class="form-group row mt-2 col-sm-4">
-                        <button type="button" (click)="volverAtras()" class="btn btn-success waves-effect waves-light"><i class="fa fa-arrow-left"></i> Volver atrás</button>
+                        <button *ngIf="true" type="submit" [disabled]="personaForm.invalid" class="btn btn-success waves-effect waves-light"><i class="fa fa-save"></i> Guardar
+                            cambios</button>
+                        <button type="button" (click)="volverAtras()" class="btn btn-primary waves-effect waves-light mt-2"><i class="fa fa-arrow-left"></i> Volver atrás</button>
                     </div>
                 </div>
             </form>

@@ -69,7 +69,7 @@ export class BecarioComponent implements OnInit {
 
   guardarBecario() {
     
-    const { nombre, id, responsables } = this.becarioForm.value;    
+    const { nombre } = this.becarioForm.value;    
 
     if(this.becarioSeleccionado) {
 

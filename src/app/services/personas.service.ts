@@ -13,10 +13,10 @@ export class PersonasService {
 
   constructor(private http: HttpClient) { }
 
-  getPersonas(desde: number = 0) {
+  getPersonas(desde: number = 0, limite = 0) {
 
-    const url = `${base_url}/personas?desde=${desde}`;
-  
+    const url = `${base_url}/personas?desde=${desde}&limit=${limite}`;
+    
     return this.http.get(url).pipe( 
       
       map( (resp : {personas: Persona[], total: number}) => {
@@ -52,6 +52,21 @@ export class PersonasService {
       return persona;
 
     }));
+  }
+
+  createPersona(
+    persona: {
+      nombre: string, 
+      apellidos: string,
+      email: string
+      puesto: string, 
+      horario: string
+  }) {
+
+    const url = `${base_url}/personas`;
+    
+    return this.http.post(url, persona);
+
   }
 
   deletePersona(id: string) {
