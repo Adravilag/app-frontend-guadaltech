@@ -4,7 +4,7 @@ Este proyecto fue generado con [Angular CLI](https://github.com/angular/angular-
 
 ## Development server
 
-Ejecuta `ng serve` para el servicio de desarrollo. Navega a `http://localhost:4200/`. La aplicación se recargará automáticamente si cambias alguno de los archivos de origen. Para ejecutar el proyecto en producción navegue a https://guadaltech-app-prueba.herokuapp.com/.
+Ejecuta `ng serve` para el servicio de desarrollo. Navega a `http://localhost:4200/`. La aplicación se recargará automáticamente si cambias alguno de los archivos de origen. Para ejecutar el proyecto en producción navegue a `https://guadaltech-app-prueba.herokuapp.com/`.
 
 # Documentación
 
