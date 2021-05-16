@@ -18,7 +18,7 @@ export class BecariosComponent implements OnInit {
   public desde: number = 0;
   public totalBecarios: number = 0;
   public cargando: boolean = true;
-
+  
   constructor(private becariosService: BecariosService, private personasService: PersonasService) { }
 
   ngOnInit(): void {

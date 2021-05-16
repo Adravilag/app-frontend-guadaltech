@@ -63,13 +63,6 @@
         <button [disabled]="totalBecarios < (desde + 10)" (click)="cambiarPagina(10) " class="btn btn-primary">Siguiente</button>
     </div>
     <div class="row" *ngIf="cargando">
-        <div class="col-12">
-            <div class="alert alert-info text-center">
-                <h4>Cargando</h4>
-                <i class="fa fa-spinner fa-refresh fa-2x"></i>
-                <p class="mb-0">Por favor, espere...</p>
-            </div>
-        </div>
+        <app-loading tipo="becarios"></app-loading>
     </div>
-
 </div>
