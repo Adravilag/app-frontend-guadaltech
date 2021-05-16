@@ -43,5 +43,11 @@ Como objetivo del desarrollo de la aplicación, será necesario garantizar los s
 * Lograr que la aplicación de Angular sea lo más óptima posible, necesidad de no volver a reutilizar el mismo código
 * ~Sistema de Login/Registro~
 * ~Sistema de Identificación por Token y acceso a páginas por roles~
-* Paginación de los datos obtenidos de _Personas_ y _Becarios_ tanto en Node.JS como en Angular
-* Pruebas unitarias y de integración
+* Paginación en listados de los datos obtenidos de _Becarios_ y _Personas_ tanto en Node.JS como en Angular
+* ~Pruebas unitarias y de integración~
+
+## Objetivos Completados
+* Diseño sencillo y elegante
+* Listado de Becarios y Personas funcionando a partir de la API REST creado para Personas
+* CRUD para Becarios y Personas (con la excepción de crear una nueva Persona, ya que lo ideal sería crear una persona a partir de una página de registro y no en el panel)
+* Paginación en listados de los datos obtenidos de _Becarios_ y _Personas_ tanto en Node.JS como en Angular
