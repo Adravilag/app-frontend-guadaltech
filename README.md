@@ -1,10 +1,10 @@
 # Guadaltech Frontend
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.9.
+Este proyecto fue generado con [Angular CLI](https://github.com/angular/angular-cli) version 11.2.9.
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Ejecuta `ng serve` para el servicio de desarrollo. Navega a `http://localhost:4200/`. La aplicación se recargará automáticamente si cambias alguno de los archivos de origen. Para ejecutar el proyecto en producción navegue a https://guadaltech-app-prueba.herokuapp.com/.
 
 # Documentación
 
