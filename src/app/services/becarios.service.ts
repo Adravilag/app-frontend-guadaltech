@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 
 import { Becario } from '../models/becario.model';
-import { map } from 'rxjs/operators';
+import { map, max } from 'rxjs/operators';
 
 const base_url = environment.base_url_becarios;
 
@@ -20,9 +20,12 @@ export class BecariosService {
     return this.http.get(url);
   }
 
-  getBecarios(desde: number = 0) {
+  getBecarios(desde: number = 0, limit: number = 0) {
+    
 
-    const url = `${base_url}/becarios?filter={"skip":"${desde}", "limit":"10" }`;
+    const url = limit === 0 ? `${base_url}/becarios?filter={"skip":"${desde}"}` 
+      : `${base_url}/becarios?filter={"skip":"${desde}", "limit":"${limit}" }`
+      
     return this.http.get<Becario[]>(url).pipe(
       
       map( (resp : Becario[]) => resp.filter( r => r.id !== '' )),
@@ -39,7 +42,6 @@ export class BecariosService {
             becario.responsables, 
             becario.id)
         );
-        console.log(resp);
 
         return becarios;
 
@@ -62,7 +64,6 @@ export class BecariosService {
   updateBecario( becario: Becario) {
         
     const url = `${base_url}/becarios/${becario.id}`;
-    console.log(url);
     return this.http.put(url, becario);
   
   }

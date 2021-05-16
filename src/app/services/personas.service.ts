@@ -64,7 +64,6 @@ export class PersonasService {
   updatePersona(persona: Persona) {
 
     const url = `${base_url}/personas/${persona.uid}`;
-    console.log(url);
     return this.http.put(url, persona);
 
   }

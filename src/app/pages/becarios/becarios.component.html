@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col">
             <h4 class="card-title">Listado de Becarios</h4>
-            <h6 class="card-subtitle">Becarios registrados en la aplicación</h6>
+            <h6 class="card-subtitle">Becarios registrados en la aplicación ({{totalBecarios}})</h6>
         </div>
         <div class="col">
             <div class="text-end">
@@ -15,7 +15,7 @@
 
     <hr>
 
-    <div class="table-responsive animate__animated animate__fadeIn">
+    <div class="table-responsive animate__animated animate__fadeIn" *ngIf="!cargando">
         <table class="table table-bordered">
             <thead>
                 <tr>
@@ -24,7 +24,7 @@
                     <th>Puesto</th>
                     <th>Horario</th>
                     <th>Fecha Alta</th>
-                    <th>Responsables</th>
+                    <th class="w250">Responsables</th>
                     <th class="w100">Acciones</th>
                 </tr>
             </thead>
@@ -45,13 +45,13 @@
                     <td>
                         {{ becario.fechaalta }}
                     </td>
-                    <td>
+                    <td class="w250">
                         <span *ngFor="let persona of personas | responsables:becario">
                             <!-- <img  class="avatar_thumbnail_becarios" src="../../../assets/img/test_avatar.jpg" [alt]="persona.nombre"> -->
                             <a [routerLink]="['/panel/persona/', persona.uid]" >{{persona.nombre}} {{persona.apellidos}}</a>&nbsp;
                         </span>
                     </td>
-                    <td class="text-nowrap text-center">
+                    <td class="text-center">
                         <a [routerLink]="['/panel/becario', becario.id]" data-toggle="tooltip" data-original-title="Editar"> <i class="fas fa-edit fa-2x text-inverse m-r-10 cursor"></i></a>
                         &nbsp;
                         <a (click)="deleteBecario(becario)" data-toggle="tooltip" data-original-title="Borrar"> <i class="fas fa-times fa-2x text-danger cursor"></i> </a>
@@ -59,7 +59,17 @@
                 </tr>
             </tbody>
         </table>
+        <button [disabled]="desde === 0" (click)="cambiarPagina(-10)" class="btn btn-primary">Anterior</button> &nbsp;
+        <button [disabled]="totalBecarios < (desde + 10)" (click)="cambiarPagina(10) " class="btn btn-primary">Siguiente</button>
     </div>
-    <button (click)="cambiarPagina(-10)" class="btn btn-primary">Anterior</button> &nbsp;
-    <button (click)="cambiarPagina(10) " class="btn btn-primary">Siguiente</button>
+    <div class="row" *ngIf="cargando">
+        <div class="col-12">
+            <div class="alert alert-info text-center">
+                <h4>Cargando</h4>
+                <i class="fa fa-spinner fa-refresh fa-2x"></i>
+                <p class="mb-0">Por favor, espere...</p>
+            </div>
+        </div>
+    </div>
+
 </div>

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { delay } from 'rxjs/operators';
 import { Becario } from 'src/app/models/becario.model';
@@ -30,13 +30,15 @@ export class PersonaComponent implements OnInit {
 
     this.activatedRoute.params.subscribe( ({id}) => this.cargarPersona(id));    
 
+
+
     this.personaForm = this.fb.group({
-      apellidos: ['', Validators.required],
-      email: ['', Validators.required],
-      horario: ['', Validators.required],
-      nombre: ['', Validators.required],
-      puesto: ['', Validators.required],
-      salario: ['', Validators.required],
+      apellidos: [{value: '', disabled: true}, Validators.required],
+      email: [{value: '', disabled: true}, Validators.required],
+      horario: [{value: '', disabled: true}, Validators.required],
+      nombre: [{value: '', disabled: true}, Validators.required],
+      puesto: [{value: '', disabled: true}, Validators.required],
+      salario: [{value: '', disabled: true}, Validators.required],
     });
 
     this.becariosService.getBecarios().subscribe( resp => {

@@ -2,14 +2,13 @@
     <div class="row">
         <div class="col">
             <h4 class="card-title">Listado de Personas</h4>
-            <h6 class="card-subtitle">Personas registradas en la aplicación</h6>
+            <h6 class="card-subtitle">Personas registradas en la aplicación ({{totalPersonas}})</h6>
         </div>
-
     </div>
 
     <hr>
 
-    <div class="table-responsive animate__animated animate__fadeIn">
+    <div class="table-responsive animate__animated animate__fadeIn" *ngIf="!cargando">
         <table class="table table-bordered">
             <thead>
                 <tr class="text-center">
@@ -19,7 +18,7 @@
                     <th>Puesto</th>
                     <th>Horario</th>
                     <th>Salario</th>
-                    <th class="text-nowrap w100">Acciones</th>
+                    <th class="w100">Acciones</th>
                 </tr>
             </thead>
             <tbody>
@@ -36,12 +35,9 @@
                     <td>
                         <select class="form-control " [(ngModel)]="persona.puesto">
                             <option value=" ">Seleccione el puesto</option>
-                            <option value="Administrativa ">Administrativa</option>
-                            <option value="Administrativo ">Administrativo</option>
-                            <option value="Diseñador ">Diseñador</option>
-                            <option value="Diseñadora ">Diseñadora</option>
-                            <option value="Desarrollador ">Desarrollador</option>
-                            <option value="Desarrolladora ">Desarrolladora</option>
+                            <option value="Administrativ@">Administrativ@</option>
+                            <option value="Diseñador/a">Diseñador/a</option>
+                            <option value="Desarrollador/a ">Desarrollador/a</option>
                             <option value="Front-End Developer ">Front-End Developer</option>
                             <option value="Back-End Developer ">Back-End Developer</option>
                             <option value="Full-Stack Developer ">Full-Stack Developer</option>
@@ -56,9 +52,18 @@
                         </select>
                     </td>
                     <td>
-                        <input type="text" class="form-control" placeholder="Salario" [(ngModel)]="persona.salario">
+                        <select [disabled] class="form-control " [(ngModel)]="persona.salario">
+                            <option value=" ">Seleccione el salario</option>
+                            <option value="13000">13000</option>
+                            <option value="15000">15000</option>
+                            <option value="18000">18000</option>
+                            <option value="20000">20000</option>
+                            <option value="22000">22000</option>
+                            <option value="23000">23000</option>
+                            <option value="25000">25000</option>
+                        </select>
                     </td>
-                    <td class="text-nowrap text-center">
+                    <td class="text-center">
                         <a (click)="guardarCambios(persona)" data-toggle="tooltip" data-original-title="Guardar"> <i class="fas fa-save fa-2x text-inverse m-r-10 cursor"></i></a>
                         &nbsp;
                         <a (click)="deletePersona(persona)" data-toggle="tooltip" data-original-title="Borrar"> <i class="fas fa-times fa-2x text-danger cursor"></i> </a>
@@ -67,7 +72,16 @@
             </tbody>
 
         </table>
+        <button [disabled]="desde === 0" (click)="cambiarPagina(-10)" class="btn btn-primary">Anterior</button> &nbsp;
+        <button [disabled]="totalPersonas < (desde + 10)" (click)="cambiarPagina(10) " class="btn btn-primary">Siguiente</button>
     </div>
-    <button (click)="cambiarPagina(-10)" class="btn btn-primary">Anterior</button> &nbsp;
-    <button (click)="cambiarPagina(10) " class="btn btn-primary">Siguiente</button>
+    <div class="row" *ngIf="cargando">
+        <div class="col-12">
+            <div class="alert alert-info text-center">
+                <h4 class="alert-heading">Cargando</h4>
+                <i class="fa fa-spinner fa-refresh fa-2x"></i>
+                <p class="mb-0">Por favor, espere...</p>
+            </div>
+        </div>
+    </div>
 </div>

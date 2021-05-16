@@ -17,6 +17,7 @@ export class BecariosComponent implements OnInit {
   public personas : Persona[] = [];
   public desde: number = 0;
   public totalBecarios: number = 0;
+  public cargando: boolean = true;
 
   constructor(private becariosService: BecariosService, private personasService: PersonasService) { }
 
@@ -26,7 +27,9 @@ export class BecariosComponent implements OnInit {
   }
 
   loadBecarios() : void {    
-    this.becariosService.getBecarios(this.desde).subscribe( (resp) => {
+    this.cargando = true;
+    this.becariosService.getBecarios(this.desde, 10).subscribe( (resp) => {
+      this.cargando = false;
       this.becarios = resp;
     });
   }

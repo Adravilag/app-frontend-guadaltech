@@ -1,5 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
 
+body {
+    padding-bottom: 50px;
+}
+
 body,
 .card-body {
     background-color: rgb(243, 243, 243);
@@ -13,30 +17,16 @@ nav {
 
 .footer {
     padding: 15px;
-    background: rgb(248, 248, 248);
+    background: rgb(33, 37, 41);
+    color: white;
     box-shadow: -1px -1px 1px rgb(216, 216, 216);
 }
 
-.avatar_thumbnail {
-    width: 45px;
-    border-radius: 41px 41px 41px;
-    margin-left: 10px;
-    box-shadow: -1px -1px 3px black;
-}
-
-.avatar_thumbnail_becarios {
-    width: 25px;
-    border-radius: 41px 41px 41px;
-    margin-left: 10px;
-    box-shadow: -1px -1px 3px black;
-}
-
-.img-avatar {
-    width: 225px;
-    border-radius: 11px 11px 11px;
-    float: left;
-    margin-top: 15px;
-    margin-bottom: 15px;
+.img_logo {
+    width: 100%;
+    max-width: 300px;
+    max-height: 300px;
+    height: auto;
 }
 
 .w75 {

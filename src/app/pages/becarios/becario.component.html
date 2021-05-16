@@ -2,8 +2,8 @@
 
     <div class="row mt-2">
         <div class="col">
-            <h4 class="card-title">Nuevo Becario</h4>
-            <h6 class="card-subtitle">Creación del nuevo becario</h6>
+            <h4 class="card-title">{{ title }}</h4>
+            <h6 class="card-subtitle">Manipulación de datos del becario</h6>
         </div>
     </div>
 
@@ -34,15 +34,12 @@
                         <div class="input-group">
                             <select class="form-control" formControlName="puesto">
                                 <option value="">Seleccione el puesto</option>
-                                <option value="Administrativa">Administrativa</option>
-                                <option value="Administrativo">Administrativo</option>
-                                <option value="Diseñador">Diseñador</option>
-                                <option value="Diseñadora">Diseñadora</option>
-                                <option value="Desarrollador">Desarrollador</option>
-                                <option value="Desarrolladora">Desarrolladora</option>
-                                <option value="Front-End Developer">Front-End Developer</option>
-                                <option value="Back-End Developer">Back-End Developer</option>
-                                <option value="Full-Stack Developer">Full-Stack Developer</option>
+                                <option value="Administrativ@">Administrativ@</option>
+                                <option value="Diseñador/a">Diseñador/a</option>
+                                <option value="Desarrollador/a ">Desarrollador/a</option>
+                                <option value="Front-End Developer ">Front-End Developer</option>
+                                <option value="Back-End Developer ">Back-End Developer</option>
+                                <option value="Full-Stack Developer ">Full-Stack Developer</option>
                             </select>
                         </div>
                     </div>
@@ -74,7 +71,6 @@
                     <div class="form-group row mt-2 col-sm-4">
                         <button type="submit" [disabled]="becarioForm.invalid" class="btn btn-success waves-effect waves-light"><i class="fa fa-save"></i> Guardar
                           cambios</button>
-
                     </div>
                 </div>
             </form>

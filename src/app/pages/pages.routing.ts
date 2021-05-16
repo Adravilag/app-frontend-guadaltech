@@ -11,7 +11,7 @@ import { PersonaComponent } from './personas/persona.component';
 const routes: Routes = [
     {   path: 'panel', component: PagesComponent,
         children: [
-            { path: 'home', component: HomeComponent, pathMatch: 'full', data: { title: 'Home App' } },
+            { path: '', component: HomeComponent, pathMatch: 'full', data: { title: 'Home App' } },
             { path: 'personas', component: PersonasComponent, pathMatch: 'full', data: { title: 'Personas App' } },
             { path: 'persona/:id', component: PersonaComponent, pathMatch: 'full', data: { title: 'Persona App' } },
             { path: 'becarios', component: BecariosComponent, pathMatch: 'full', data: { title: 'Becarios App' } },
