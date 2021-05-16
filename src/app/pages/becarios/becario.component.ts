@@ -38,7 +38,7 @@ export class BecarioComponent implements OnInit {
       apellidos: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(30)]],
       puesto: ['', Validators.required],
       horario: ['', Validators.required],
-      responsables: ['', Validators.required],
+      responsables: ['', [Validators.required, Validators.maxLength(4)]],
     });
 
     this.personasService.getPersonas().subscribe( resp => {
