@@ -6,26 +6,6 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
-
 # Documentación
 
 ## Propuesta
@@ -71,12 +51,12 @@ El modelo de **Persona** consta con los siguientes atributos:
 # Guía de uso
 En el navegador de la aplicación podrás acceder a distintas rutas para mostrar el listado de Personas y Becarios.
 * En Personas, podrás ver un listado de todas las personas disponibles en una tabla paginada (máximo de 10) con toda la información con la posibilidad de actualizar los datos y eliminar la persona elegida sin necesidad de cargar una nueva página. Se ha tenido en cuenta realizarlo de esta manera por el propósito de hacer un panel para poder manipular los datos a partir de una persona con los privilegios de administración. Además de dar una otra perspectiva del que se podrá apreciar con el listado de Becarios.
-* En Becarios, la información no es editable pero sí es posible editar el becario seleccionado a partir del icono de editar, en la columna de Acciones. Por otra parte, en la columna responsables, podrás acceder al perfil de la persona responsable asignado para dicho becario.
-* En el momento de edicar el becario, se tiene en cuenta las siguientes validaciones:
-``
+* En Becarios, la información no es editable pero sí es posible editar el becario seleccionado a partir del icono de editar, en la columna de Acciones. Por otra parte, en la columna responsables, podrás acceder al perfil de la persona responsable asignado para dicho becario. Al igual que Personas también tiene la acción de eliminar el Becario desde la fila correspondiente de la tabla.
+
+En el momento de edicar el becario, se tiene en cuenta las siguientes **validaciones**:
+
 * **Nombre**: Debe tener entre 2 y 15 caracteres.
-- **Apellidos**: Debe tener entre 2 y 30 caracteres.
-- **Puesto**: Es obligatorio
-- **Horario**: Es obligatorio
-- **Responsables**: Es obligatorio y debe tener asignado como máximo 5.
-``
+* **Apellidos**: Debe tener entre 2 y 30 caracteres.
+* **Puesto**: Es obligatorio
+* **Horario**: Es obligatorio
+* **Responsables**: Es obligatorio y debe tener asignado como máximo 5.
