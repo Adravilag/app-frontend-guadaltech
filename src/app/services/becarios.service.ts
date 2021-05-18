@@ -79,7 +79,7 @@ export class BecariosService {
 
     const url = `${base_url}/becarios`;
     const f = new Date();
-    const fechaalta = f.getDate() + "/"+ f.getMonth()+ "/" +f.getFullYear();
+    const fechaalta = f.getDate() + "/"+ (f.getMonth() + 1)+ "/" +f.getFullYear();
     
     return this.http.post(url, {fechaalta, ...becarios });
   

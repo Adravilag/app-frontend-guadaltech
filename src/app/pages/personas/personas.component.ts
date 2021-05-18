@@ -32,6 +32,14 @@ export class PersonasComponent implements OnInit {
       this.cargando = false;
       this.personas = resp.personas;
       this.totalPersonas = resp.total;
+    }, (error) => {      
+
+      Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: error.errors.msg,
+      });
+
     });
   }
 
@@ -68,6 +76,14 @@ export class PersonasComponent implements OnInit {
             Swal.fire('Persona borrada', `${persona.nombre} ${persona.apellidos} fue eliminado correctamente`, 'success');
           });
           
+        }, (error) => {
+
+          Swal.fire({
+            icon: 'error',
+            title: 'Error',
+            text: error.error.msg,
+          });
+
         });
             
       }
@@ -78,8 +94,34 @@ export class PersonasComponent implements OnInit {
   guardarCambios(persona) {
     
     this.personasService.updatePersona(persona).subscribe( () => {
+
       Swal.fire('Actualizado',`${persona.nombre} ${persona.apellidos} ha sido actualizado correctamente`,'success');
       this.loadPersonas();
+
+    }, (error) => {      
+
+      let msg: 'Hubo un error en actualizar.'
+      
+      if ( !error.ok ) {
+        msg = error.error.msg;
+      }
+      else if ( typeof error.error.errors.nombre !== 'undefined' ) {     
+        msg = error.error.errors.nombre.msg;
+      }
+      else if ( typeof error.error.errors.apellidos !== 'undefined' ) {
+        msg = error.error.errors.apellidos.msg;
+      }
+      else if ( typeof error.error.errors.email !== 'undefined' ) {
+        msg = error.error.errors.email.msg;
+      }
+
+      
+      Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: msg,
+      });
+
     });
 
   }

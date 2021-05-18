@@ -25,7 +25,6 @@ export class PersonaComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private personasService: PersonasService,
-    private becariosService: BecariosService,
     private router: Router,
     private activatedRoute: ActivatedRoute
   ) { }
@@ -34,15 +33,12 @@ export class PersonaComponent implements OnInit {
 
     this.activatedRoute.params.subscribe( ({id}) => this.cargarPersona(id));    
 
-    this.becariosService.getBecarios().subscribe( resp => {
-      this.becarios = resp;
-    });
-
   }
 
   cargarPersona(id) {
 
     if( id === 'nuevo') {
+
       this.title = 'Nueva Persona';
       this.subtitle = 'Manipulación de datos de la persona'
       this.personaForm = this.fb.group({
@@ -51,10 +47,13 @@ export class PersonaComponent implements OnInit {
         email: ['', Validators.required],
         horario: ['', Validators.required],
         puesto: ['', Validators.required],
-        salario: ['', Validators.required],
+        salario: ['', Validators.required]
+
       });
+
       this.crearPersona = true;
       return;
+
     } 
 
     this.personaForm = this.fb.group({
@@ -75,16 +74,35 @@ export class PersonaComponent implements OnInit {
       const { nombre, apellidos, email, puesto, horario, salario } = persona;      
       this.personaForm.setValue({ nombre, apellidos, email, puesto, horario, salario });
       
-    }, () => this.router.navigateByUrl(`/panel/personas`));
+    }, (error) => {      
 
+      Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: error.error.msg,
+      });
+
+      this.router.navigateByUrl(`/panel/personas`);
+
+    });
   }
 
   guardarPersona() {
     
-    const { nombre, id, responsables } = this.personaForm.value;    
+    const { nombre } = this.personaForm.value;    
     
     this.personasService.createPersona(this.personaForm.value).subscribe( () => {
+
         Swal.fire('Creado',`${nombre} creado correctamente`,'success');
+
+    }, (error) => {      
+
+      Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: error.error.msg,
+      });
+
     });
 
     this.router.navigateByUrl(`/panel/personas`)
@@ -95,9 +113,13 @@ export class PersonaComponent implements OnInit {
   volverAtras() {
   
     if(this.crearPersona) {
+
       this.router.navigateByUrl('/panel/personas');
+
     } else {
+
       this.router.navigateByUrl('/panel/becarios');
+      
     }
 
   }
